@@ -1,0 +1,70 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/site.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" asp-controller="Account" asp-action="Login">Human Resource Management</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+
+                <div class="nav-item navbar-right dropdown">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-link " asp-controller="Account" asp-action="LogOff" role="button" aria-haspopup="true" aria-expanded="false">
+                            Sing Out
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-link " asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
+                            Sing In
+                        </a>
+                    }
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-md-3">
+
+                <div class="list-group bg-info">
+                    <a class="list-group-item list-group-item-action bg-info text-white" asp-controller="Staff" asp-action="Index">Anasayfa</a>
+                    <a class="list-group-item list-group-item-action bg-info text-white" asp-controller="Staff" asp-action="GetReports">Raporlarım</a>
+                    <a class="list-group-item list-group-item-action bg-info text-white" asp-controller="Staff" asp-action="Add">Rapor ekle</a>
+                </div>
+
+
+            </div>
+            <div class="col-md-9">
+                @if (TempData["message"] != null)
+                {
+                    <div class="alert alert-info" role="alert">@TempData["message"]</div>
+                    TempData["message"] = null;
+                }
+                
+                <div class="text-center">@RenderBody()</div>
+
+            </div>
+            <div class="clearfix"></div>
+            <footer>
+                <div class="col-md-12">Footer</div>
+            </footer>
+
+        </div>
+    </div>
+</body>
+</html>

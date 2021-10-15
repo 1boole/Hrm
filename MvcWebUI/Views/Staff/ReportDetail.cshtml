@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "StaffReportDetail";
+    Layout = "~/Views/Shared/_StaffLayout.cshtml";
+}
+
+@foreach (var report in Model.Reports)
+{
+
+    <h3>Rapor Detatyı, Rapor Seri No:@report.SerialNumber</h3>
+
+    <table class="table table-primary">
+        <tbody>
+            <tr>
+                <td><b>Çalışan Adı Soyadı</b></td>
+                <td><b>Ünvanı</b></td>
+                <td><b>Rapor Düzenleme Tarihi</b></td>
+            </tr>
+            <tr>
+                <td>@report.FullName</td>
+                <td>@report.DegreeName</td>
+                <td>@report.ReportTime</td>
+            </tr>
+            <tr>
+                <td><b>Önem Derecesi</b></td>
+                <td><b>Başlangıç Tarihi</b></td>
+                <td><b>Bitiş Tarihi</b></td>
+            </tr>
+            <tr>
+                <td>@report.ImportanceLevel</td>
+                <td>@report.StartTime</td>
+                <td>@report.FinishTime</td>
+            </tr>
+
+            <tr>
+                <td><b>Yapılan İşler / Aksiyonlar</b></td>
+            </tr>
+            <tr>
+                <td>@report.WorksPerformed</td>
+            </tr>
+
+            <tr>
+                <td><b>Talep Sahibi</b></td>
+                <td><b>Planlanmış Bitirme Tarihi</b></td>
+                <td><b>Süre Aşımı/Timeout Evet-Hayır</b></td>
+            </tr>
+            <tr>
+                <td>@report.Requester</td>
+                <td>@report.EstimatedEndTime</td>
+                <td>
+                    @if (report.TimeOut)
+                    {
+                        <p>Evet</p>
+                    }
+                    else
+                    {
+                        <p>Hayır</p>
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Haftalık Harcanan Süre (Saat)</b></td>
+                <td><b>Durumu / Status</b></td>
+            </tr>
+            <tr>
+                <td>@report.Hours</td>
+                <td>
+                    @if (report.Status)
+                    {
+                        <p>Başarılı</p>
+                    }
+                    else
+                    {
+                        <p>Başarısız</p>
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Yorumlar/Öneriler</b></td>
+            </tr>
+            <tr>
+                <td>@report.Suggestions</td>
+            </tr>
+
+        </tbody>
+    </table>
+}
+
+

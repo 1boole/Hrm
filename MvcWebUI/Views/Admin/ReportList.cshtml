@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "ReportList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Bütün Raporlar</h1>
+
+@foreach (var report in Model.Reports)
+{
+    <table class="table table-primary">
+        <h3>@report.FullName</h3>
+        <thead>
+            <tr>
+                <td>Başlangıç zamanı</td>
+                <td>Talep Sahibi</td>
+                <td>Öneri</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @*@foreach (var report in Model.Reports)
+            {*@
+                <tr>
+
+                    <td>@report.StartTime</td>
+                    <td>@report.Requester</td>
+                    <td>@report.Suggestions</td>
+                    <td><a class="btn btn-xs btn-info" asp-controller="Admin" asp-action="ReportDetail" asp-route-SerialNumber="@report.SerialNumber">Detay</a> </td>
+                    <td><a class="btn btn-xs btn-warning" asp-controller="Admin" asp-action="UpdateReport" asp-route-SerialNumber="@report.SerialNumber">Güncelle</a> </td>
+                    <td><a class="btn btn-xs btn-danger" asp-controller="Admin" asp-action="DeleteReport" asp-route-SerialNumber="@report.SerialNumber">Sil</a> </td>
+
+                </tr>
+            @*}*@
+        </tbody>
+    </table>
+}

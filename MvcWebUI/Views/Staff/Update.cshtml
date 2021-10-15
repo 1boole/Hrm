@@ -1,0 +1,89 @@
+﻿@model MvcWebUI.Models.ReportUpdateViewModel
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_StaffLayout.cshtml";
+}
+
+<h3>Rapor Güncelle</h3>
+<form asp-controller="Staff" asp-action="Update" method="post">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label asp-for="Report.ImportanceLevel">Önem Seviyesi:</label>
+        <input asp-for="Report.ImportanceLevel" value="1" class="form-control" placeholder="Product Name" />
+        <span asp-validation-for="Report.ImportanceLevel"></span>
+        @Html.ValidationMessageFor(x => x.Report.ImportanceLevel, "", new { @style = "color:red" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Report.StartTime">Başangıç Zamanı:</label>
+        <input type="datetime-local" value="2021-06-01T08:30" asp-for="Report.StartTime" placeholder="1 ve 5 arası değer giriniz."><br><br>
+        @Html.ValidationMessageFor(x => x.Report.StartTime, "", new { @style = "color:red" })
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Report.FinishTime">Bitiş Zamanı:</label>
+        <input type="datetime-local" value="2021-06-01T08:30" asp-for="Report.FinishTime"><br><br>
+        @Html.ValidationMessageFor(x => x.Report.FinishTime, "", new { @style = "color:red" })
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Report.WorksPerformed">Çalışma Performası:</label>
+        <textarea asp-for="Report.WorksPerformed" class="form-control" placeholder="Çalışma Performansı">
+        </textarea>
+        <span asp-validation-for="Report.WorksPerformed"></span>
+        @Html.ValidationMessageFor(x => x.Report.WorksPerformed, "", new { @style = "color:red" })
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Report.Requester">Talep Sahibi:</label>
+        <input asp-for="Report.Requester" class="form-control" placeholder="Talep sahibi" />
+        <span asp-validation-for="Report.Requester"></span>
+        @Html.ValidationMessageFor(x => x.Report.Requester, "", new { @style = "color:red" })
+    </div>
+
+
+    <div class="form-group">
+        <label>Bitiş Zamanı:</label>
+        <input type="datetime-local" value="2021-06-01T08:30" asp-for="Report.EstimatedEndTime"><br><br>
+        @Html.ValidationMessageFor(x => x.Report.EstimatedEndTime, "", new { @style = "color:red" })
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Report.TimeOut">Zaman Aşımı:</label>
+        <input asp-for="Report.TimeOut" class="form-control" />
+        <span asp-validation-for="Report.TimeOut"></span>
+        @Html.ValidationMessageFor(x => x.Report.TimeOut, "", new { @style = "color:red" })
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Report.Hours">Harcanan Saat:</label>
+        <input asp-for="Report.Hours" class="form-control" placeholder="Harcanan süre" />
+        <span asp-validation-for="Report.Hours"></span>
+        @Html.ValidationMessageFor(x => x.Report.Hours, "", new { @style = "color:red" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Report.Status">Durumu:</label>
+        <input asp-for="Report.Status" class="form-control" />
+        <span asp-validation-for="Report.Status"></span>
+        @Html.ValidationMessageFor(x => x.Report.Status, "", new { @style = "color:red" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Report.Suggestions">Öneriler:</label>
+        <textarea asp-for="Report.Suggestions" class="form-control" placeholder="Öneriler">
+        </textarea>
+        <span asp-validation-for="Report.Suggestions"></span>
+        @Html.ValidationMessageFor(x => x.Report.Suggestions, "", new { @style = "color:red" })
+    </div>
+    <input type="hidden" asp-for="Report.SerialNumber" />
+    <input type="hidden" asp-for="Report.ReportDateTime" value="@DateTime.Now"/>
+    <input type="hidden" asp-for="Report.ReportCreatorId"/>
+    <input type="submit" value="Update" class="btn btn-xs btn-success" />
+</form>

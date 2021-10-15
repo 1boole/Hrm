@@ -1,0 +1,15 @@
+C:\Osman\Project\Web\HRM\Entities\bin\Debug\net5.0\Entities.deps.json
+C:\Osman\Project\Web\HRM\Entities\bin\Debug\net5.0\Entities.dll
+C:\Osman\Project\Web\HRM\Entities\bin\Debug\net5.0\ref\Entities.dll
+C:\Osman\Project\Web\HRM\Entities\bin\Debug\net5.0\Entities.pdb
+C:\Osman\Project\Web\HRM\Entities\bin\Debug\net5.0\Core.dll
+C:\Osman\Project\Web\HRM\Entities\bin\Debug\net5.0\Core.pdb
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\Entities.csprojAssemblyReference.cache
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\Entities.AssemblyInfoInputs.cache
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\Entities.AssemblyInfo.cs
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\Entities.csproj.CoreCompileInputs.cache
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\Entities.csproj.CopyComplete
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\Entities.dll
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\ref\Entities.dll
+C:\Osman\Project\Web\HRM\Entities\obj\Debug\net5.0\Entities.pdb
